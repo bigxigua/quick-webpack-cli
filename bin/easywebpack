@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+process.env.NODE_PATH = __dirname + '/../node_modules/'; //?????
+
+const { resolve } = require('path');
+const program = require('commander');
+const pkg = require('../package.json');
+
+const resHandle = function (command) {
+	return resolve(__dirname, '../commands/', command)
+};
+
+program
+	.version(pkg.version);
+
+program
+	.usage('<command> 这是一个简单的创建webpack配置文件的脚手架，运行 easywebpack init 即可!!');
+
+program
+	.command('init') //初始化命令行参数对象，直接获得命令行输入
+	.description('创建一个新的项目')//命令描述
+	.alias('i') //命令别名
+	.action(() => {
+		require(resHandle('init')) //注册一个callback函数
+	})
+
+program.parse(process.argv);
+
+if(!program.args.length) {
+	program.help();
+}
