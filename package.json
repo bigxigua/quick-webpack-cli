@@ -1,15 +1,15 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "npm cli learn",
+  "name": "quickwebpacktbz",
+  "version": "1.0.1",
+  "description": "a easy webpack cli for quick create webpack project",
   "main": "index.js",
   "bin": {
-    "easywebpack": "bin/easywebpack"
+    "quickwebpack": "bin/quickwebpack"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "1336945839@qq.com",
   "license": "ISC",
   "dependencies": {
     "commander": "^2.12.2",
