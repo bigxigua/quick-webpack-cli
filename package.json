@@ -1,6 +1,6 @@
 {
   "name": "quickwebpacktbz",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "a easy webpack cli for quick create webpack project",
   "main": "index.js",
   "bin": {
