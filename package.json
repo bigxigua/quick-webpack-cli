@@ -1,6 +1,6 @@
 {
   "name": "quickwebpacktbz",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a easy webpack cli for quick create webpack project",
   "main": "index.js",
   "bin": {
@@ -13,8 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^2.12.2",
-    "download-git-repo": "^1.0.1",
     "inquirer": "^4.0.2",
+    "lodash": "^4.17.5",
     "ora": "^1.3.0"
   }
 }
