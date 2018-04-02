@@ -19,21 +19,17 @@ const vertifyInput = (val, msg) => {
 
 const question = [{
     type: 'input',
-    name: 'project',
-    message: '项目名称:',
-    validate(val) {
-        return vertifyInput(val, '请输入项目文件夹名称')
-    }
-}, {
-    type: 'input',
-    name: 'place',
-    message: '在哪个目录下创建(默认当前目录)',
-    default: './'
+    name: 'ensure',
+    message: '确认在当前目录下创建吗？',
+    default: 'yes'
 }];
 
-module.exports = prompt(question).then(({project, place}) => {
+module.exports = prompt(question).then(({ ensure }) => {
+    if(ensure !== 'yes') {
+        process.exit(0);
+    }
     const spinner = ora('正在下载，请稍等...').start();
-    const tarPath = resolve(process.cwd(), place, `./${project}`);
+    const tarPath = process.cwd();
     const templatePath = resolve(__dirname, '../template');
     copyTemplateDir(templatePath, tarPath, {}).then(() => {
         spinner.succeed('下载成功')
